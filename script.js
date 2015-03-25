@@ -56,5 +56,6 @@
 	angular.module('weatherApp', [])
 		.controller('MainCtrl', ['$scope', '$http', 'WeatherService', weatherController])
 		.factory('WeatherService', ['$http', weatherService]);
+		
 
 }());
