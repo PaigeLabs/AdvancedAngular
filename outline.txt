@@ -1,0 +1,19 @@
+Advanced Angular Outline
+Review of Basics (30 Mins)
+	Modules
+		App
+		Other
+	Controllers
+	Services
+	Directives
+
+Config && Run (30 Mins)
+	Interceptors
+
+Custom Directives (1 Hr)	
+
+Gulp, Bower and BrowserSync (1 Hr)
+
+Large Application File Structure (1 Hr)
+
+Unit Testing with Jasmine && Karma (1-2 Hr)
