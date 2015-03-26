@@ -4,10 +4,10 @@
 	var config = function($routeProvider, $httpProvider){
 		$routeProvider
 			.when('/', {
-				templateUrl: 'main.view.html'
+				templateUrl: 'modules/weather/views/main.view.html'
 			})
 			.when('/hourly/:cityId/:date', {
-				templateUrl:'hourly.view.html'
+				templateUrl:'modules/weather/views/hourly.view.html'
 			})
 			.otherwise({redirectTo:'/'});
 
