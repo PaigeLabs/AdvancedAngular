@@ -1,5 +1,6 @@
 (function(){
-
+	'use strict';
+	
 	var weatherController = function($scope, $http, WeatherService){
 
 		$scope.getCurrent = function(){
@@ -22,7 +23,7 @@
 
 	
 
-	angular.module('weatherApp', [])
+	angular.module('weatherApp')
 		.controller('MainCtrl', ['$scope', '$http', 'WeatherService', weatherController]);
 
 }());

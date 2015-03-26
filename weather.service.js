@@ -1,5 +1,6 @@
 (function(){
-
+	'use strict';
+	
 	var weatherService = function($http){
 		var getCurrent = function(city){
 			return $http.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial')

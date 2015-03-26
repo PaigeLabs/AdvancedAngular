@@ -8,21 +8,15 @@
 <body ng-cloak>
 
 <section ng-controller="MainCtrl" class="form-inline">	
-	<section ng-class="search form-group">
+	<section ng-class="search" class="form-group">
 		<input type="text" class="form-control" name="search" ng-model="searchCity">
 		<button ng-click="getCurrent()" class="btn btn-default">search</button>
 		<span>{{error}}</span>
 	</section>
 
-	<section ng-class="current" ng-show="weather">
-		<h4>{{weather.location}}</h4>
-		<div>Current Temp: {{weather.temp}}</div>
-		<div>Lo: {{weather.tempMin}}</div>
-		<div>Hi: {{weather.tempMax}}</div>
-		<div>Current Conditions: {{weather.conditions}}</div>
-	</section>
+	<weather weather="weather"></weather>
 
-	<section ng-class="forecast" ng-show="forecast.length > 0">
+ 	<section ng-class="forecast" ng-show="forecast.length > 0">
 		<ul>
 			<li>
 				<span>Lo</span>
@@ -39,8 +33,10 @@
 </section>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
-<script src="script.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+<script src="weather.module.js"></script>
+<script src="weather.controller.js"></script>
 <script src="weather.service.js"></script>
+<script src="weather.directive.js"></script>
 </body>
 </html>
