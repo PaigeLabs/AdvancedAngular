@@ -10,7 +10,10 @@ Review of Basics (30 Mins)
 Config && Run (30 Mins)
 	Interceptors
 
-Custom Directives (1 Hr)	
+Filters
+	Custom Filters (15 Mins)
+
+Custom Directives (1 Hr)
 
 Gulp, Bower and BrowserSync (1 Hr)
 

@@ -2,13 +2,15 @@
 <html ng-app="weatherApp">
 <head>
 	<title>Advanced Angular Weather App</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="main.css">
 </head>
 <body ng-cloak>
 
-<section ng-controller="MainCtrl">	
-	<section ng-class="search">
-		<input type="text" name="search" ng-model="searchCity">
-		<button ng-click="getCurrent()">search</button>
+<section ng-controller="MainCtrl" class="form-inline">	
+	<section ng-class="search form-group">
+		<input type="text" class="form-control" name="search" ng-model="searchCity">
+		<button ng-click="getCurrent()" class="btn btn-default">search</button>
 		<span>{{error}}</span>
 	</section>
 
