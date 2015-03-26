@@ -3,7 +3,7 @@
 
 	var httpInterceptor = function($q, $rootScope){
 		var numLoadings = 0;
-
+		
 		return{
 			request: function(config){
 				numLoadings++;
