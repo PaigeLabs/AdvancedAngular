@@ -33,7 +33,7 @@
 		};
 
 		var getHourly = function(cityId){
-      return $http.get("http://api.openweathermap.org/data/2.5/forecast?id=" + cityId + "&units=imperial")
+      return $http.get('http://api.openweathermap.org/data/2.5/forecast?id=' + cityId + '&units=imperial')
       	.then(function(result){
       		return result.data.list;
       	});

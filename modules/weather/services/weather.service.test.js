@@ -34,6 +34,19 @@ describe('Weather Service', function(){
 		}]
 	};
 
+	var fakeHourly = {
+		list:[{
+			dt: 1001,
+			temp:{
+				min: 20,
+				max: 30
+			},
+			weather:[{
+				description: 'sunny'
+			}]
+		}]
+	};
+
 	var $httpBackend, weatherService;
 
 	beforeEach(module('weatherApp'));
@@ -43,6 +56,7 @@ describe('Weather Service', function(){
 		weatherService = $injector.get('WeatherService');
 		$httpBackend.whenGET('http://api.openweathermap.org/data/2.5/weather?q=Liberty,MO&units=imperial').respond(fakeWeather);
 		$httpBackend.whenGET('http://api.openweathermap.org/data/2.5/forecast/daily?q=Liberty,MO&mode=json&units=imperial&cnt=5').respond(fakeForecast);
+		$httpBackend.whenGET('http://api.openweathermap.org/data/2.5/forecast?id=1&units=imperial').respond(fakeHourly);
 	}));
 
 	it('should be able to get the current weather for a city', function(){
@@ -60,6 +74,16 @@ describe('Weather Service', function(){
 			expect(result[0].cityId).toEqual(1);
 			expect(result[0].tempMin).toEqual(20);
 			expect(result[0].tempMax).toEqual(30);
+		});
+		$httpBackend.flush();
+	});
+
+	it('should be able to get an hourly forecast for a specified city', function(){
+		weatherService.GetHourly(1).then(function(result){
+			expect(result[0].dt).toEqual(1001);
+			expect(result[0].temp.min).toEqual(20);
+			expect(result[0].temp.max).toEqual(30);
+			expect(result[0].weather[0].description).toEqual('sunny');
 		});
 		$httpBackend.flush();
 	});
