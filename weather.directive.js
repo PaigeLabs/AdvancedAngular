@@ -27,13 +27,14 @@
 		return{
 			restrict: 'E',
 			transclude: true,
-			template: '<div ng-show="showEl" ng-transclude></div>',
+			scope:{},
+			template: '<div ng-transclude></div>',
 			link: function(scope, element, attrs){
 				scope.$on('loader_show', function(){
-					scope.showEl = true;
+					element.css('display', 'block');
 				});
 				scope.$on('loader_hide', function(){
-					scope.showEl = false;
+					element.css('display', 'none');
 				});
 			}
 		};
