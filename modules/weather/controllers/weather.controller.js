@@ -1,7 +1,7 @@
 (function(){
 	'use strict';
 	
-	var weatherController = function($scope, $http, $routeParams, WeatherService){
+	var weatherController = function($routeParams, WeatherService){
 
 		var ctrl = this;
 
@@ -44,6 +44,6 @@
 	
 
 	angular.module('weatherApp')
-		.controller('MainCtrl', ['$scope', '$http', '$routeParams', 'WeatherService', weatherController]);
+		.controller('MainCtrl', ['$routeParams', 'WeatherService', weatherController]);
 
 }());
