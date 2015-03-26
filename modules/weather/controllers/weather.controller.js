@@ -31,10 +31,10 @@
 		};
 
 		ctrl.clearForm = function(){
-			ctrl.searchCity = null;
-			ctrl.weather = null;
-			ctrl.forecast = null;
-			ctrl.hourly = null;
+			delete ctrl.searchCity;
+			delete ctrl.weather;
+			delete ctrl.forecast;
+			delete ctrl.hourly;
 		};
 
 		return ctrl;
