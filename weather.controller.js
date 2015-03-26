@@ -28,10 +28,6 @@
 				});
 		};
 
-		$scope.clearForm = function(){
-			$scope.weather = null;
-			$scope.forecast = null;
-		};
 	};
 
 	
