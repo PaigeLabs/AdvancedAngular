@@ -28,4 +28,5 @@ gulp.task('test:unit', function(){
 
 gulp.task('default', ['inject'], function(){
 	gulp.watch(paths.scripts, ['inject']);
+  gulp.watch(paths.unitTests, ['test:unit']);
 });
