@@ -1,19 +1,20 @@
 <section ng-init="clearForm()">
 	<section ng-class="search" class="form-group">
-		<input type="text" class="form-control" name="search" ng-model="searchCity">
-		<button ng-click="getCurrent(searchCity)" class="btn btn-default">search</button>
+		<input type="text" class="form-control" name="search" ng-model="vm.searchCity">
+		<button ng-click="vm.getCurrent(vm.searchCity)" ng-disabled="!vm.searchCity" class="btn btn-success">search</button>
+		<button ng-click="vm.clearForm()" class="btn btn-default">clear</button>
 	</section>
 
 	<current-weather 
-		location="weather.location" 
-		current-temp="weather.temp" 
-		high="weather.tempMax" 
-		low="weather.tempMin" 
-		conditions="weather.conditions" 
-		image="weather.image">
+		location="vm.weather.location" 
+		current-temp="vm.weather.temp" 
+		high="vm.weather.tempMax" 
+		low="vm.weather.tempMin" 
+		conditions="vm.weather.conditions" 
+		image="vm.weather.image">
 	</current-weather>
 
-	<section ng-class="forecast" ng-show="forecast.length > 0">
+	<section ng-class="forecast" ng-show="vm.forecast.length > 0">
 		<h4>Forecast</h4>
 		<ul>
 			<li>
@@ -22,7 +23,7 @@
 				<span>Hi</span>
 				<span>Conditions</span>
 			</li>
-			<li ng-repeat="weather in forecast">
+			<li ng-repeat="weather in vm.forecast">
 				<span><a href="#/hourly/{{weather.cityId}}/{{weather.date}}">{{weather.date | date: 'MM/d'}}</a></span>
 				<span>{{weather.tempMin | number:0}}</span>
 				<span>{{weather.tempMax | number:0}}</span>

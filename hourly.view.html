@@ -1,5 +1,6 @@
-<div ng-init="getHourly()">
-  <div ng-show="hourly">
+<div ng-init="vm.getHourly()">
+  <h4>{{vm.searchCity}} Hourly Forecast</h4>
+  <div ng-show="vm.hourly">
     <table>
       <tbody>
         <tr>
@@ -8,7 +9,7 @@
           <td>Max</td>
           <td>Weather</td>
         </tr>
-        <tr ng-repeat="day in hourly | specificDate: date">
+        <tr ng-repeat="day in vm.hourly | specificDate: vm.date">
           <td>{{day.dt*1000 | date:'MM/d h:mm a'}}</td>
           <td>{{day.temp.min | number:0}}</td>
           <td>{{day.temp.max | number:0}}</td>

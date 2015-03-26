@@ -3,30 +3,41 @@
 	
 	var weatherController = function($scope, $http, $routeParams, WeatherService){
 
-		$scope.getCurrent = function(searchCity){
-			$scope.weather = null;
-			$scope.forecast = null;
+		var ctrl = this;
+
+		ctrl.getCurrent = function(searchCity){
+			ctrl.weather = null;
+			ctrl.forecast = null;
 			WeatherService.GetCurrent(searchCity)
 				.then(function(result){
-					$scope.weather = result;
-					$scope.getForecast(searchCity);
+					ctrl.weather = result;
+					ctrl.getForecast(searchCity);
 				});
 		};
 
-		$scope.getForecast = function(searchCity){
+		ctrl.getForecast = function(searchCity){
 			WeatherService.GetForecast(searchCity)
 				.then(function(result){
-					$scope.forecast = result;
+					ctrl.forecast = result;
 				});
 		};
 
-		$scope.getHourly = function(){
-			$scope.date = $routeParams.date;
+		ctrl.getHourly = function(){
+			ctrl.date = $routeParams.date;
 			WeatherService.GetHourly($routeParams.cityId)
 				.then(function(result){
-					$scope.hourly = result;
+					ctrl.hourly = result;
 				});
 		};
+
+		ctrl.clearForm = function(){
+			ctrl.searchCity = null;
+			ctrl.weather = null;
+			ctrl.forecast = null;
+			ctrl.hourly = null;
+		};
+
+		return ctrl;
 
 	};
 
