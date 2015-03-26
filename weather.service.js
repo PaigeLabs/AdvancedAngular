@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
-	
+
 	var weatherService = function($http){
 		var getCurrent = function(city){
 			return $http.get('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=imperial')
@@ -20,6 +20,7 @@
 				.then(function(result){
 					return result.data.list.map(function(val,key){
 						return {
+							date: val.dt * 1000,
 							tempMin: val.temp.min,
 							tempMax: val.temp.max,
 							conditions: val.weather[0].main

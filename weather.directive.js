@@ -10,9 +10,9 @@
 			template: 
 			'<section ng-class="current" ng-show="weather">'+
 				'<h4>{{weather.location}}</h4>'+
-				'<div>Current Temp: {{weather.temp}}</div>'+
-				'<div>Lo: {{weather.tempMin}}</div>'+
-				'<div>Hi: {{weather.tempMax}}</div>'+
+				'<div>Current Temp: {{weather.temp | number:0}}</div>'+
+				'<div>Lo: {{weather.tempMin | number:0}}</div>'+
+				'<div>Hi: {{weather.tempMax | number:0}}</div>'+
 				'<div>Current Conditions: {{weather.conditions}}</div>'+
 			'</section>'
 		};
