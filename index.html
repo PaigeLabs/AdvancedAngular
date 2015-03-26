@@ -14,7 +14,7 @@
 		<span>{{error}}</span>
 	</section>
 
-	<weather weather="weather"></weather>
+	<weather location="weather.location" current-temp="weather.temp" high="weather.tempMax" low="weather.tempMin" conditions="weather.conditions"></weather>
 
  	<section ng-class="forecast" ng-show="forecast.length > 0">
  		<h4>Forecast</h4>

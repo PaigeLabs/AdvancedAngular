@@ -5,15 +5,19 @@
 		return{
 			restrict: 'E',
 			scope:{
-				weather: '='
+				location:'=',
+				temp:'=currentTemp',
+				tempMin:'=low',
+				tempMax:'=high',
+				conditions: '='
 			},
 			template: 
-			'<section ng-class="current" ng-show="weather">'+
-				'<h4>{{weather.location}}</h4>'+
-				'<div>Current Temp: {{weather.temp | number:0}}</div>'+
-				'<div>Lo: {{weather.tempMin | number:0}}</div>'+
-				'<div>Hi: {{weather.tempMax | number:0}}</div>'+
-				'<div>Current Conditions: {{weather.conditions}}</div>'+
+			'<section ng-class="current" ng-show="location">'+
+				'<h4>{{location}}</h4>'+
+				'<div>Current Temp: {{temp | number:0}}</div>'+
+				'<div>Lo: {{tempMin | number:0}}</div>'+
+				'<div>Hi: {{tempMax | number:0}}</div>'+
+				'<div>Current Conditions: {{conditions}}</div>'+
 			'</section>'
 		};
 	};
