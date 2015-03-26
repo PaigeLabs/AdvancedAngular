@@ -9,11 +9,12 @@
 				temp:'=currentTemp',
 				tempMin:'=low',
 				tempMax:'=high',
-				conditions: '='
+				conditions: '=',
+				image: '='
 			},
 			template: 
 			'<section ng-class="current" ng-show="location">'+
-				'<h4>{{location}}</h4>'+
+				'<h4>{{location}} <img ng-src="http://openweathermap.org/img/w/{{image}}.png"/></h4>'+
 				'<div>Current Temp: {{temp | number:0}}</div>'+
 				'<div>Lo: {{tempMin | number:0}}</div>'+
 				'<div>Hi: {{tempMax | number:0}}</div>'+
@@ -23,6 +24,6 @@
 	};
 
 	angular.module('weatherApp')
-		.directive('weather', [weatherDirective]);
+		.directive('currentWeather', [weatherDirective]);
 
 }());

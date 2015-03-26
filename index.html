@@ -8,38 +8,20 @@
 <body ng-cloak>
 
 <section ng-controller="MainCtrl" class="form-inline">	
-	<section ng-class="search" class="form-group">
-		<input type="text" class="form-control" name="search" ng-model="searchCity">
-		<button ng-click="getCurrent()" class="btn btn-default">search</button>
-		<span>{{error}}</span>
-	</section>
 
-	<weather location="weather.location" current-temp="weather.temp" high="weather.tempMax" low="weather.tempMin" conditions="weather.conditions"></weather>
 
- 	<section ng-class="forecast" ng-show="forecast.length > 0">
- 		<h4>Forecast</h4>
-		<ul>
-			<li>
-				<span>Date</span>
-				<span>Lo</span>
-				<span>Hi</span>
-				<span>Conditions</span>
-			</li>
-			<li ng-repeat="weather in forecast">
-				<span>{{weather.date | date: 'MM/d'}}</span>
-				<span>{{weather.tempMin | number:0}}</span>
-				<span>{{weather.tempMax | number:0}}</span>
-				<span>{{weather.conditions}}</span>
-			</li>
-		</ul>
-	</section>
+	<section ng-view></section>
+	
 </section>
 
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-route.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
 <script src="weather.module.js"></script>
 <script src="weather.controller.js"></script>
 <script src="weather.service.js"></script>
 <script src="weather.directive.js"></script>
+<script src="weather.filter.js"></script>
 </body>
 </html>

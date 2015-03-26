@@ -1,0 +1,32 @@
+<section ng-class="search" class="form-group">
+	<input type="text" class="form-control" name="search" ng-model="searchCity">
+	<button ng-click="getCurrent(searchCity)" class="btn btn-default">search</button>
+	<span>{{error}}</span>
+</section>
+
+<current-weather 
+	location="weather.location" 
+	current-temp="weather.temp" 
+	high="weather.tempMax" 
+	low="weather.tempMin" 
+	conditions="weather.conditions" 
+	image="weather.image">
+</current-weather>
+
+<section ng-class="forecast" ng-show="forecast.length > 0">
+	<h4>Forecast</h4>
+	<ul>
+		<li>
+			<span>Date</span>
+			<span>Lo</span>
+			<span>Hi</span>
+			<span>Conditions</span>
+		</li>
+		<li ng-repeat="weather in forecast">
+			<span><a href="#/hourly/{{weather.cityId}}/{{weather.date}}">{{weather.date | date: 'MM/d'}}</a></span>
+			<span>{{weather.tempMin | number:0}}</span>
+			<span>{{weather.tempMax | number:0}}</span>
+			<span>{{weather.conditions}} <img ng-src="http://openweathermap.org/img/w/{{weather.image}}.png"/></span>
+		</li>
+	</ul>
+</section>

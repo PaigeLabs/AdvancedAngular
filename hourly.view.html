@@ -1,0 +1,23 @@
+<div ng-init="getHourly()">
+  <div ng-show="hourly">
+    <table>
+      <tbody>
+        <tr>
+          <td>Day</td>
+          <td>Min</td>
+          <td>Max</td>
+          <td>Weather</td>
+        </tr>
+        <tr ng-repeat="day in hourly | specificDate: date">
+          <td>{{day.dt*1000 | date:'MM/d h:mm a'}}</td>
+          <td>{{day.temp.min | number:0}}</td>
+          <td>{{day.temp.max | number:0}}</td>
+          <td>{{day.weather[0].description}}</td>
+          <td>
+            <img ng-src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

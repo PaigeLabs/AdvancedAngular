@@ -10,7 +10,8 @@
 							temp: result.data.main.temp,
 							tempMin: result.data.main.temp_min,
 							tempMax: result.data.main.temp_max,
-							conditions: result.data.weather[0].main
+							conditions: result.data.weather[0].main,
+							image: result.data.weather[0].icon
 						};
 				});	
 		};
@@ -20,18 +21,28 @@
 				.then(function(result){
 					return result.data.list.map(function(val,key){
 						return {
+							cityId: result.data.city.id,
 							date: val.dt * 1000,
 							tempMin: val.temp.min,
 							tempMax: val.temp.max,
-							conditions: val.weather[0].main
+							conditions: val.weather[0].main,
+							image: val.weather[0].icon
 						};
 					});
 				});
 		};
 
+		var getHourly = function(cityId){
+      return $http.get("http://api.openweathermap.org/data/2.5/forecast?id=" + cityId + "&units=imperial")
+      	.then(function(result){
+      		return result.data.list;
+      	});
+    };
+
 		return {
 			GetCurrent: getCurrent,
-			GetForecast: getForecast
+			GetForecast: getForecast,
+			GetHourly: getHourly
 		};
 	};
 
