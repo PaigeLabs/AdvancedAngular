@@ -1,0 +1,22 @@
+{
+  "name": "AdvancedAngular",
+  "version": "1.0.0",
+  "description": "Class code for Advanced Angular class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leebrandt/AdvancedAngular.git"
+  },
+  "author": "leebrandt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leebrandt/AdvancedAngular/issues"
+  },
+  "homepage": "https://github.com/leebrandt/AdvancedAngular",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
