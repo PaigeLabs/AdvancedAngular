@@ -8,7 +8,10 @@
 <body ng-cloak>
 
 <section ng-controller="MainCtrl" class="form-inline">	
-
+	
+	<loader class="loader">
+		<span>I'm Loading...</span>
+	</loader>
 
 	<section ng-view></section>
 	
@@ -23,5 +26,6 @@
 <script src="weather.service.js"></script>
 <script src="weather.directive.js"></script>
 <script src="weather.filter.js"></script>
+<script src="http.interceptor.js"></script>
 </body>
 </html>

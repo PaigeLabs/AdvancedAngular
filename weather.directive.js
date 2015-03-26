@@ -23,7 +23,24 @@
 		};
 	};
 
+	var loaderDirective = function(){
+		return{
+			restrict: 'E',
+			transclude: true,
+			template: '<div ng-show="showEl" ng-transclude></div>',
+			link: function(scope, element, attrs){
+				scope.$on('loader_show', function(){
+					scope.showEl = true;
+				});
+				scope.$on('loader_hide', function(){
+					scope.showEl = false;
+				});
+			}
+		};
+	};
+
 	angular.module('weatherApp')
-		.directive('currentWeather', [weatherDirective]);
+		.directive('currentWeather', [weatherDirective])
+		.directive('loader', [loaderDirective]);
 
 }());
