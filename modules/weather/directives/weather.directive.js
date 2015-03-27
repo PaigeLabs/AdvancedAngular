@@ -15,10 +15,10 @@
 			template: 
 			'<section ng-class="current" ng-show="location">'+
 				'<h4>{{location}} <img ng-src="http://openweathermap.org/img/w/{{image}}.png"/></h4>'+
-				'<div>Current Temp: {{temp | number:0}}</div>'+
-				'<div>Lo: {{tempMin | number:0}}</div>'+
-				'<div>Hi: {{tempMax | number:0}}</div>'+
-				'<div>Current Conditions: {{conditions}}</div>'+
+				'<div class="current-temp">Current Temp: {{temp | number:0}}</div>'+
+				'<div class="low-temp">Lo: {{tempMin | number:0}}</div>'+
+				'<div class="high-temp">Hi: {{tempMax | number:0}}</div>'+
+				'<div class="current-conditions">Current Conditions: {{conditions}}</div>'+
 			'</section>'
 		};
 	};
