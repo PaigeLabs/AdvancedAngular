@@ -1,22 +1,38 @@
-Advanced Angular Outline
+AKA: Professional Angular Development
+
+Node && NPM
+Optional: SublimeText
+
 Review of Basics (30 Mins)
-	Modules
-		App
-		Other
-	Controllers
-	Services
-	Directives
-
-Config && Run (30 Mins)
-	Interceptors
-
-Filters
-	Custom Filters (15 Mins)
+     Modules
+     Controllers
+     Services
+     Directives
 
 Custom Directives (1 Hr)
+     passing whole weather object
+     passing each element in attributes
+          camel-case to dashed-case
+          ‘=‘ vs ‘@'
+     external template (templateUrl)
 
-Gulp, Bower and BrowserSync (1 Hr)
+Custom Filters (30 Min)
 
-Large Application File Structure (1 Hr)
+Config && Run (1 Hr)
+     Interceptors
+          Directive with Linker function
+          transclude
+          $broadcast
 
-Unit Testing with Jasmine && Karma (1-2 Hr)
+Pro Tips (10 Min)
+     Controller as vm
+     this vs $scope
+     data-ng-*
+     data-ng-bind
+
+Large Application File Structure (20 Min)
+     Look at FantasyTrader?
+
+Gulp, Bower and Karma (30 Min)
+
+Unit Testing with Jasmine && Karma (1 Hr)

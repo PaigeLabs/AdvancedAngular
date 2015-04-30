@@ -26,7 +26,7 @@ gulp.task('test:unit', function(){
     });
 });
 
-gulp.task('default', ['inject'], function(){
+gulp.task('default', ['inject', 'test:unit'], function(){
 	gulp.watch(paths.scripts, ['inject']);
   gulp.watch(paths.unitTests, ['test:unit']);
 });
