@@ -54,7 +54,7 @@ describe('Weather Service', function(){
 	beforeEach(inject(function($injector){
 		$httpBackend = $injector.get('$httpBackend');
 		weatherService = $injector.get('WeatherService');
-		$httpBackend.whenGET('http://api.openweathermap.org/data/2.5/weather?q=Liberty,MO&units=imperial').respond(fakeWeather);
+		$httpBackend.when('GET','http://api.openweathermap.org/data/2.5/weather?q=Liberty,MO&units=imperial').respond(fakeWeather);
 		$httpBackend.whenGET('http://api.openweathermap.org/data/2.5/forecast/daily?q=Liberty,MO&mode=json&units=imperial&cnt=5').respond(fakeForecast);
 		$httpBackend.whenGET('http://api.openweathermap.org/data/2.5/forecast?id=1&units=imperial').respond(fakeHourly);
 	}));

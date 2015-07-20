@@ -1,18 +1,20 @@
 <div ng-init="vm.getHourly()">
-  <h4>{{vm.searchCity}} Hourly Forecast</h4>
+  <h4>{{vm.hourly.location}} Hourly Forecast</h4>
   <div ng-show="vm.hourly">
     <table>
-      <tbody>
+      <thead>
         <tr>
           <td>Day</td>
           <td>Min</td>
           <td>Max</td>
           <td>Weather</td>
         </tr>
-        <tr ng-repeat="day in vm.hourly | specificDate: vm.date">
+      </thead>
+      <tbody>
+        <tr ng-repeat="day in vm.hourly.list | specificDate: vm.date">
           <td>{{day.dt*1000 | date:'MM/d h:mm a'}}</td>
-          <td>{{day.temp.min | number:0}}</td>
-          <td>{{day.temp.max | number:0}}</td>
+          <td>{{day.main.temp_min | number:0}}</td>
+          <td>{{day.main.temp_max | number:0}}</td>
           <td>{{day.weather[0].description}}</td>
           <td>
             <img ng-src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" />
