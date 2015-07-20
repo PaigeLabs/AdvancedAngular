@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/leebrandt/AdvancedAngular",
   "devDependencies": {
+    "browser-sync": "^2.8.0",
     "gulp": "^3.8.11",
     "gulp-inject": "^1.2.0",
     "gulp-karma": "0.0.4",
