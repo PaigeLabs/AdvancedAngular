@@ -13,7 +13,7 @@
 							conditions: result.data.weather[0].main,
 							image: result.data.weather[0].icon
 						};
-				});	
+				});
 		};
 
 		var getForecast = function(city){
@@ -35,7 +35,10 @@
 		var getHourly = function(cityId){
       return $http.get('http://api.openweathermap.org/data/2.5/forecast?id=' + cityId + '&units=imperial')
       	.then(function(result){
-      		return result.data.list;
+      		return {
+						location: result.data.city.name,
+						list: result.data.list
+					}
       	});
     };
 
