@@ -12,7 +12,6 @@
 			.otherwise({redirectTo:'/'});
 
 			$httpProvider.interceptors.push('httpInterceptor');
-
 	};
 
 	var run = function($rootScope){

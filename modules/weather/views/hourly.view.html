@@ -23,4 +23,15 @@
       </tbody>
     </table>
   </div>
+
+  <nvd3-line-chart
+    data="vm.chartData"
+    xAxisTickFormat="vm.xAxisTickFormatFunction()"
+    yAxisTickFormat="yAxisTickFormatFunction()"
+    width="550"
+    height="350"
+    showXAxis="true"
+    showYAxis="true">
+    <svg></svg>
+  </nvd3-line-chart>
 </div>

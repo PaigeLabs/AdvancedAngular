@@ -38,7 +38,7 @@
       		return {
 						location: result.data.city.name,
 						list: result.data.list
-					}
+					};
       	});
     };
 

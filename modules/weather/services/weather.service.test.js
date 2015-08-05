@@ -19,7 +19,8 @@ describe('Weather Service', function(){
 
 	var fakeForecast = {
 		city:{
-				id: 1
+				id: 1,
+				name: 'Liberty'
 		},
 		list: [{
 			dt: 1001,
@@ -35,6 +36,9 @@ describe('Weather Service', function(){
 	};
 
 	var fakeHourly = {
+		city:{
+			name:'Liberty'
+		},
 		list:[{
 			dt: 1001,
 			temp:{
@@ -80,10 +84,10 @@ describe('Weather Service', function(){
 
 	it('should be able to get an hourly forecast for a specified city', function(){
 		weatherService.GetHourly(1).then(function(result){
-			expect(result[0].dt).toEqual(1001);
-			expect(result[0].temp.min).toEqual(20);
-			expect(result[0].temp.max).toEqual(30);
-			expect(result[0].weather[0].description).toEqual('sunny');
+			expect(result.list[0].dt).toEqual(1001);
+			expect(result.list[0].temp.min).toEqual(20);
+			expect(result.list[0].temp.max).toEqual(30);
+			expect(result.list[0].weather[0].description).toEqual('sunny');
 		});
 		$httpBackend.flush();
 	});
